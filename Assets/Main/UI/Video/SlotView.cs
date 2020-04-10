@@ -19,11 +19,6 @@ namespace UI.Video
             slotComponents.ForEach(x => x.OnEventProps = Event);
         }
 
-        private void OnEnable()
-        {
-            Upsert();
-        }
-
         protected override void Create()
         {
             var obj = Instantiate(slotDummy, slotParent) as SlotComponent;
@@ -31,7 +26,7 @@ namespace UI.Video
             slotComponents.Add(obj);
         }
 
-        protected override void Upsert()
+        public override void Upsert()
         {
             var videos = ServerInfo.Videos;
 

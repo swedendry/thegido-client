@@ -28,6 +28,7 @@ namespace UI.Video
             success: (data) =>
             {
                 Router.Open("LobbyView/VideoView/SlotView");
+                slotView.Upsert();
             });
         }
 
@@ -41,12 +42,22 @@ namespace UI.Video
         {
             switch (param)
             {
+                case "refresh":
+                    {
+                        GetVideos();
+                    }
+                    break;
                 case "close":
                     {
                         Router.Close("LobbyView/VideoView/PopupView");
                     }
                     break;
             }
+        }
+
+        public void Refresh()
+        {
+
         }
     }
 }

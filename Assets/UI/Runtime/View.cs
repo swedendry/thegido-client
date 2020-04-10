@@ -27,7 +27,7 @@ namespace UI
             components.ForEach(x => x.Empty());
         }
 
-        protected virtual void Upsert()
+        public virtual void Upsert()
         {
 
         }
